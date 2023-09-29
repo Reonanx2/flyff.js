@@ -43,11 +43,6 @@ export default class Monster extends Base {
   public getByListOfIds(
     monsterIds: Array<number>
   ): Promise<Array<MonsterObject>> {
-    if (monsterIds.length <= 1) {
-      throw new Error(
-        "If you're fetching only 1 job, it is probably better to use getById(). Otherwise specify an array of job IDs."
-      );
-    }
     return this.get(`/monster/${monsterIds.join(",")}`);
   }
 

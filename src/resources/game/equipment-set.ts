@@ -43,11 +43,6 @@ export default class EquipmentSet extends Base {
   public getByListOfIds(
     equipSetIds: Array<number>
   ): Promise<Array<EquipSetObject>> {
-    if (equipSetIds.length <= 1) {
-      throw new Error(
-        "If you're fetching only 1 equipment set, it is probably better to use getById(). Otherwise specify an array of equipment set IDs."
-      );
-    }
     return this.get(`/equipset/${equipSetIds.join(",")}`);
   }
 }

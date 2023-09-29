@@ -41,11 +41,6 @@ export default class Item extends Base {
    * @returns {Promise<Array<ItemObject>>} An array of objects for the specific item IDs
    */
   public getByListOfIds(itemIds: Array<number>): Promise<Array<ItemObject>> {
-    if (itemIds.length <= 1) {
-      throw new Error(
-        "If you're fetching only 1 job, it is probably better to use getById(). Otherwise specify an array of job IDs."
-      );
-    }
     return this.get(`/item/${itemIds.join(",")}`);
   }
 

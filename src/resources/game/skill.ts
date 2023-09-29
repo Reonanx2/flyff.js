@@ -41,11 +41,6 @@ export default class Skill extends Base {
    * @returns {Promise<Array<SkillObject>>} An array of objects for the specific skill IDs
    */
   public getByListOfIds(skillIds: Array<number>): Promise<Array<SkillObject>> {
-    if (skillIds.length <= 1) {
-      throw new Error(
-        "If you're fetching only 1 skill, it is probably better to use getById(). Otherwise specify an array of skill IDs."
-      );
-    }
     return this.get(`/skill/${skillIds.join(",")}`);
   }
 

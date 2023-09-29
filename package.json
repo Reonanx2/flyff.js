@@ -1,0 +1,29 @@
+{
+  "name": "flyff.js",
+  "version": "0.0.1",
+  "description": "An API Wrapper for the FlyFF Universe API",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "tsc",
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "keywords": [
+    "flyff",
+    "universe",
+    "fly",
+    "for",
+    "fun"
+  ],
+  "author": "Dane Miller",
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}

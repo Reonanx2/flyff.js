@@ -17,6 +17,9 @@
     "for",
     "fun"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Dane Miller",
   "license": "MIT",
   "devDependencies": {

@@ -1,5 +1,11 @@
 # flyff.js
 
+## 1.0.1
+
+### Patch Changes
+
+- 82b5af4: Fixes a logic error in the base class
+
 ## 1.0.0
 
 ### Major Changes
@@ -19,4 +25,3 @@ const client = new FlyffClient();
 ```js
 await client.job.getAllIds();
 ```
-

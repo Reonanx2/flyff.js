@@ -1,6 +1,6 @@
 {
   "name": "flyff.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An API Wrapper for the FlyFF Universe API",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",

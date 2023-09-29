@@ -4,17 +4,18 @@
 
 ### Major Changes
 
-- 1f45ddc: ```bash
-  npm install flyff.js
+- 1f45ddc: 1.0 Release
 
-  ````
+```bash
+npm install flyff.js
+```
 
-  ```js
-  import { FlyffClient } from "flyff.js";
+```js
+import { FlyffClient } from "flyff.js";
 
-  const client = new FlyffClient();
-  ````
+const client = new FlyffClient();
+```
 
-  ```js
-  await client.job.getAllIds();
-  ```
+```js
+await client.job.getAllIds();
+```

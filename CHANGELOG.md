@@ -1,5 +1,11 @@
 # flyff.js
 
+## 1.0.2
+
+### Patch Changes
+
+- 2374a6d: remove throwing error when using the getByListOfIds method for a single resource
+
 ## 1.0.1
 
 ### Patch Changes

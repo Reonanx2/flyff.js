@@ -43,11 +43,6 @@ export default class Achievement extends Base {
   public getByListOfIds(
     achievementIds: Array<number>
   ): Promise<Array<AchievementObject>> {
-    if (achievementIds.length <= 1) {
-      throw new Error(
-        "If you're fetching only one achievement, it is probably better to use getById(). Otherwise specify an array of achievement IDs."
-      );
-    }
     return this.get(`/achievement/${achievementIds.join(",")}`);
   }
 }

@@ -41,11 +41,6 @@ export default class Job extends Base {
    * @returns {Promise<Array<JobObject>>} An array of objects for the specific job IDs
    */
   public getByListOfIds(jobIds: Array<JobEnum>): Promise<Array<JobObject>> {
-    if (jobIds.length <= 1) {
-      throw new Error(
-        "If you're fetching only 1 job, it is probably better to use getById(). Otherwise specify an array of job IDs."
-      );
-    }
     return this.get(`/class/${jobIds.join(",")}`);
   }
 

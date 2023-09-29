@@ -41,11 +41,6 @@ export default class Npc extends Base {
    * @returns {Promise<Array<NpcObject>>} An array of objects for the specific npc IDs
    */
   public getByListOfIds(npcIds: Array<number>): Promise<Array<NpcObject>> {
-    if (npcIds.length <= 1) {
-      throw new Error(
-        "If you're fetching only one npc, it is probably better to use getById(). Otherwise specify an array of npc IDs."
-      );
-    }
     return this.get(`/npc/${npcIds.join(",")}`);
   }
 

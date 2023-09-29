@@ -41,11 +41,6 @@ export default class World extends Base {
    * @returns {Promise<Array<WorldObject>>} An array of objects for the specific world IDs
    */
   public getByListOfIds(worldIds: Array<number>): Promise<Array<WorldObject>> {
-    if (worldIds.length <= 1) {
-      throw new Error(
-        "If you're fetching only 1 world, it is probably better to use getById(). Otherwise specify an array of world IDs."
-      );
-    }
     return this.get(`/world/${worldIds.join(",")}`);
   }
 

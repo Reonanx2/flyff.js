@@ -41,11 +41,6 @@ export default class Quest extends Base {
    * @returns {Promise<Array<QuestObject>>} An array of objects for the specific npc IDs
    */
   public getByListOfIds(questIds: Array<number>): Promise<Array<QuestObject>> {
-    if (questIds.length <= 1) {
-      throw new Error(
-        "If you're fetching only one quest, it is probably better to use getById(). Otherwise specify an array of quest IDs."
-      );
-    }
     return this.get(`/quest/${questIds.join(",")}`);
   }
 }

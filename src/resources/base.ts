@@ -6,7 +6,7 @@ export class Base {
     };
 
     return fetch(API_URL, { headers }).then((response) => {
-      if (!response.ok) {
+      if (response.ok) {
         return response.json();
       }
       throw new Error(response.statusText);

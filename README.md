@@ -20,14 +20,6 @@ npm install flyff.js
 yarn add flyff.js
 ```
 
-```bash
-bun install flyff.js
-```
-
-```bash
-pnpm install flyff.js
-```
-
 ## Instantiate a new client
 
 ```js

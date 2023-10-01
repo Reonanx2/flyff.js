@@ -13,6 +13,7 @@ import UpgradeBonus from "./resources/game/bonus";
 import Awake from "./resources/game/awake";
 import RaisedPet from "./resources/game/pet";
 import Dungeon from "./resources/game/dungeon";
+
 class FlyffClient {
   public version: Version;
   public job: Job;
@@ -48,21 +49,5 @@ class FlyffClient {
   }
 }
 
-export {
-  FlyffClient,
-  Version,
-  Job,
-  World,
-  Monster,
-  Item,
-  EquipmentSet,
-  Skill,
-  PartySkill,
-  Npc,
-  Quest,
-  PK,
-  UpgradeBonus,
-  Awake,
-  RaisedPet,
-  Dungeon,
-};
+export { FlyffClient };
+export * from "./types/index";

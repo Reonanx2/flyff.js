@@ -1,5 +1,11 @@
 # flyff.js
 
+## 1.1.0
+
+### Minor Changes
+
+- 4dacdc9: Export types to allow consumers to use in applications
+
 ## 1.0.2
 
 ### Patch Changes

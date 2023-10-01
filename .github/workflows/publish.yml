@@ -27,6 +27,7 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: bun run release
+          commit: "chore: release"
         env:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

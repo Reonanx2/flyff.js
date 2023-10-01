@@ -1,5 +1,11 @@
 # flyff.js
 
+## 1.1.1
+
+### Patch Changes
+
+- 784b9f7: Export the actual types and not the classes
+
 ## 1.1.0
 
 ### Minor Changes

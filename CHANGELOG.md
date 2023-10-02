@@ -1,5 +1,11 @@
 # flyff.js
 
+## 1.1.2
+
+### Patch Changes
+
+- b1bb9fa: Add missing `ability` and `location` types to `ItemObject` interface
+
 ## 1.1.1
 
 ### Patch Changes

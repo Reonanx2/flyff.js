@@ -30,7 +30,7 @@ export type AttackFactors =
   | "bow"
   | "wand";
 
-export type Ability =
+export type Parameter =
   | "str"
   | "dex"
   | "int"
@@ -379,6 +379,43 @@ export type SkillAwake = Record<
   string,
   { uncommon: Array<number>; rare: Array<number>; unique?: Array<number> }
 >;
+
+export type Ability = {
+  upgradeLevel: number;
+  requiredLevel: number;
+  abilities: Array<{
+    parameter: Parameter;
+    add?: number;
+    set?: number;
+    rate: boolean;
+    attribute?:
+      | "rooting"
+      | "stun"
+      | "hitrate"
+      | "invisibility"
+      | "poison"
+      | "slow"
+      | "double"
+      | "bleeding"
+      | "silent"
+      | "counterattackdamage"
+      | "counterattack"
+      | "loot"
+      | "moonbeam"
+      | "hitrateandpoison"
+      | "hitrateandpoisonandstun"
+      | "lootandslow"
+      | "poisonandbleedingandmoonbeam"
+      | "stunandrooting"
+      | "forcedblock";
+    dotValue?: number;
+    dotMode?: "currentdamage" | "standardattack" | "fixedvalue" | "stacks";
+    skill?: number;
+    skillLevel?: number;
+    pvp?: boolean;
+    pve?: boolean;
+  }>;
+};
 export interface BaseObject {
   id: number;
   name: Record<Language, string>;
@@ -473,40 +510,7 @@ export interface ItemObject extends BaseObject {
   element: "fire" | "water" | "electricity" | "wind" | "earth" | "none";
   durationRealTime: boolean;
   transy?: number;
-  upgradeLevels?: Array<{
-    upgradeLevel: number;
-    requiredLevel: number;
-    abilities: Ability;
-    add?: number;
-    set?: number;
-    rate: boolean;
-    attribute?:
-      | "rooting"
-      | "stun"
-      | "hitrate"
-      | "invisibility"
-      | "poison"
-      | "slow"
-      | "double"
-      | "bleeding"
-      | "silent"
-      | "counterattackdamage"
-      | "counterattack"
-      | "loot"
-      | "moonbeam"
-      | "hitrateandpoison"
-      | "hitrateandpoisonandstun"
-      | "lootandslow"
-      | "poisonandbleedingandmoonbeam"
-      | "stunandrooting"
-      | "forcedblock";
-    dotValue?: number;
-    dotMode?: "currentdamage" | "standardattack" | "fixedvalue" | "stacks";
-    skill?: number;
-    skillLevel?: number;
-    pvp?: boolean;
-    pve?: boolean;
-  }>;
+  upgradeLevels?: Array<Ability>;
   cooldown?: number;
   casting?: number;
   duration?: number;

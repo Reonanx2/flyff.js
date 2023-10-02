@@ -1,5 +1,11 @@
 # flyff.js
 
+## 1.1.4
+
+### Patch Changes
+
+- 8735095: More adjustments to the `Ability` type
+
 ## 1.1.3
 
 ### Patch Changes

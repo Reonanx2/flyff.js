@@ -532,6 +532,8 @@ export interface ItemObject extends BaseObject {
   minDefense?: number;
   maxDefense?: number;
   blinkwingTarget: WorldLocation;
+  abilities: Array<Ability>;
+  location: WorldLocation;
   spawns: Array<Spawn>;
 }
 

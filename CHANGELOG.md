@@ -1,5 +1,11 @@
 # flyff.js
 
+## 1.1.3
+
+### Patch Changes
+
+- 5f7f42a: Refactor the `Ability` type to properly match the API response
+
 ## 1.1.2
 
 ### Patch Changes

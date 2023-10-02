@@ -381,40 +381,36 @@ export type SkillAwake = Record<
 >;
 
 export type Ability = {
-  upgradeLevel: number;
-  requiredLevel: number;
-  abilities: Array<{
-    parameter: Parameter;
-    add?: number;
-    set?: number;
-    rate: boolean;
-    attribute?:
-      | "rooting"
-      | "stun"
-      | "hitrate"
-      | "invisibility"
-      | "poison"
-      | "slow"
-      | "double"
-      | "bleeding"
-      | "silent"
-      | "counterattackdamage"
-      | "counterattack"
-      | "loot"
-      | "moonbeam"
-      | "hitrateandpoison"
-      | "hitrateandpoisonandstun"
-      | "lootandslow"
-      | "poisonandbleedingandmoonbeam"
-      | "stunandrooting"
-      | "forcedblock";
-    dotValue?: number;
-    dotMode?: "currentdamage" | "standardattack" | "fixedvalue" | "stacks";
-    skill?: number;
-    skillLevel?: number;
-    pvp?: boolean;
-    pve?: boolean;
-  }>;
+  parameter: Parameter;
+  add?: number;
+  set?: number;
+  rate: boolean;
+  attribute?:
+    | "rooting"
+    | "stun"
+    | "hitrate"
+    | "invisibility"
+    | "poison"
+    | "slow"
+    | "double"
+    | "bleeding"
+    | "silent"
+    | "counterattackdamage"
+    | "counterattack"
+    | "loot"
+    | "moonbeam"
+    | "hitrateandpoison"
+    | "hitrateandpoisonandstun"
+    | "lootandslow"
+    | "poisonandbleedingandmoonbeam"
+    | "stunandrooting"
+    | "forcedblock";
+  dotValue?: number;
+  dotMode?: "currentdamage" | "standardattack" | "fixedvalue" | "stacks";
+  skill?: number;
+  skillLevel?: number;
+  pvp?: boolean;
+  pve?: boolean;
 };
 export interface BaseObject {
   id: number;
@@ -510,7 +506,11 @@ export interface ItemObject extends BaseObject {
   element: "fire" | "water" | "electricity" | "wind" | "earth" | "none";
   durationRealTime: boolean;
   transy?: number;
-  upgradeLevels?: Array<Ability>;
+  upgradeLevels?: Array<{
+    upgradeLevel: number;
+    requiredLevel: number;
+    abilities: Array<Ability>;
+  }>;
   cooldown?: number;
   casting?: number;
   duration?: number;

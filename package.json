@@ -21,6 +21,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "homepage": "https://github.com/Reonanx2/flyff.js#readme",
+  "bugs": {
+    "url": "https://github.com/Reonanx2/flyff.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reonanx2/flyff.js.git"
+  },
   "author": "Dane Miller",
   "license": "MIT",
   "devDependencies": {

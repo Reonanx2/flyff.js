@@ -1,5 +1,11 @@
 # flyff.js
 
+## 1.1.6
+
+### Patch Changes
+
+- 44332f7: Add missing `hp` property to `MonsterObject` type
+
 ## 1.1.5
 
 ### Patch Changes

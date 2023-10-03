@@ -576,7 +576,8 @@ export interface SkillObject extends BaseObject {
   element: "fire" | "water" | "electricity" | "wind" | "earth" | "none";
   abilities: Array<Ability>;
   magic: boolean;
-  target: "party" | "line" | "area" | "single" | "finish";
+  target: "party" | "line" | "area" | "single" | "currentplayer";
+  combo: "general" | "step" | "circle" | "finish";
   debuff: boolean;
   flying: boolean;
   passive: boolean;

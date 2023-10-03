@@ -1,5 +1,11 @@
 # flyff.js
 
+## 1.1.5
+
+### Patch Changes
+
+- 2efc91f: Add missing `combo` union type to `SkillObject` interface
+
 ## 1.1.4
 
 ### Patch Changes

@@ -442,6 +442,7 @@ export interface MonsterObject extends BaseObject {
   booty?: number;
   mineral?: number;
   flying: boolean;
+  hp: number;
   mp: number;
   minAttack: number;
   maxAttack: number;

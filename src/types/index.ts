@@ -130,7 +130,11 @@ export type Parameter =
   | "multistrike"
   | "monsterexp"
   | "mosterexpanddrop"
-  | "hppercentrecovery";
+  | "hppercentrecovery"
+  | "expanddrop"
+  | "allspeed"
+  | "arcaneinsightchance"
+  | "ripostereflexchance";
 
 export type JobIcon = "messenger" | "old_female" | "old_male" | "target";
 
@@ -284,7 +288,9 @@ export type ItemSubcategory =
   | "namecolor"
   | "ticket"
   | "fcoin"
-  | "rockpaperscissors";
+  | "rockpaperscissors"
+  | "sunstone"
+  | "rainbowrace";
 
 export type NpcMenu =
   | "trade"
@@ -363,7 +369,19 @@ export type NpcMenu =
   | "exchangefwc"
   | "gachamachine"
   | "tradegreenchips"
-  | "reshufflecard";
+  | "reshufflecard"
+  | "rainbowraceapply"
+  | "createultimate"
+  | "traderings"
+  | "tradeearrings"
+  | "tradenecklaces"
+  | "dismantle"
+  | "fwcboard"
+  | "fwcteleport"
+  | "fwcranking"
+  | "fwcspectate"
+  | "fwcexchange"
+  | "fwccollect";
 
 export type Spawn = {
   world: number;
@@ -383,6 +401,7 @@ export type SkillAwake = Record<
 export type Ability = {
   parameter: Parameter;
   add?: number;
+  addMax?: number;
   set?: number;
   rate: boolean;
   attribute?:
@@ -461,7 +480,12 @@ export interface MonsterObject extends BaseObject {
   resistEarth: number;
   resistElectricity: number;
   summoned?: Array<number>;
-  appliedSkills: Array<{ skill: number; level: number }>;
+  appliedSkills: Array<{
+    skill: number;
+    level: number;
+    probability: number;
+    conditionalBuff?: number;
+  }>;
   avenge: Array<{ monster: number; skill: number; skillLevel: number }>;
   berserkThresholdHP?: number;
   berserkAttackPower?: number;
@@ -507,6 +531,15 @@ export interface ItemObject extends BaseObject {
   element: "fire" | "water" | "electricity" | "wind" | "earth" | "none";
   durationRealTime: boolean;
   transy?: number;
+  dismantle?: Array<{
+    item: number;
+    inputUpgradeLevel?: number;
+    count: number;
+    savePiercing: boolean;
+    saveElement: boolean;
+    saveUpgrade: boolean;
+    upgradeLevel: number;
+  }>;
   upgradeLevels?: Array<{
     upgradeLevel: number;
     requiredLevel: number;
@@ -530,6 +563,8 @@ export interface ItemObject extends BaseObject {
   minAttack?: number;
   maxAttack?: number;
   additionalSkillDamage?: number;
+  ultimateConvertible?: boolean;
+  possibleRandomStats?: Array<Ability>;
   consumedMP?: number;
   consumedItem?: string;
   triggerSkill?: number;
@@ -605,6 +640,8 @@ export interface SkillObject extends BaseObject {
     wallLives: number;
     reflectedDamagePVE: number;
     reflectedDamagePVP: number;
+    tetherRange: number;
+    spreadOnExpireRange: number;
     abilities: Array<Ability>;
     scalingParameters: Array<{
       parameter: string;
@@ -794,7 +831,14 @@ export interface DungeonObject extends BaseObject {
   type: "party" | "guild" | "solo" | "partyorsolo" | "guildorsolo";
   image: string;
   world: number;
-  difficulty: "normal" | "medium" | "hard" | "extrahard" | "nightmare";
+  difficulty:
+    | "normal"
+    | "medium"
+    | "hard"
+    | "extrahard"
+    | "nightmare"
+    | "story"
+    | "cursed";
   minLevel: number;
   maxLevel: number;
   cooldownSecs: number;
